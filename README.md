@@ -15,7 +15,7 @@
 
 ## 🌐 Trải nghiệm & Tải về
 
-- 🌍 **Trang giới thiệu trực tuyến (Landing Page)**: [https://duybao105.github.io/expensive_app/](https://duybao105.github.io/expensive_app/)
+- 🌍 **Trang giới thiệu trực tuyến (Landing Page)**: [https://expensiveapp-website.vercel.app/)
 - 📱 **Tải trực tiếp bản cài đặt Android**: [Tải Barod v5.4.3 APK](https://github.com/DuyBao105/expensive_app/releases/download/v5.4.3/barod-app-v5.4.3.apk) *(Dung lượng ~216 MB, tương thích Android 5.0+)*
 
 ---
