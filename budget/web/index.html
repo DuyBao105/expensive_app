@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Barod — Quản lý tiền bạc, làm chủ tương lai</title>
+  <meta name="description" content="Theo dõi thu chi, lập ngân sách và hiểu rõ dòng tiền của bạn trong một trải nghiệm đơn giản, dễ sử dụng." />
+  <link rel="icon" type="image/png" href="assets/barod-logo.png" />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="headerTop">
+    <div class="container nav-container">
+      <a href="./index.html" class="brand-anchor" title="Trang chủ Barod">
+        <div class="brand-icon-box">
+          <img src="assets/barod-logo.png" alt="Logo Barod" class="brand-icon-img" />
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title-text">Barod</span>
+          <span class="brand-sub-tag">Tài chính cá nhân</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Thanh điều hướng chính">
+        <a href="#tinh-nang" class="nav-link">Tính năng</a>
+        <a href="#trai-nghiem" class="nav-link">Trải nghiệm</a>
+        <a href="#ngan-sach" class="nav-link">Ngân sách</a>
+        <a href="#bao-cao" class="nav-link">Báo cáo</a>
+        <a href="#bao-mat" class="nav-link">Bảo mật</a>
+      </nav>
+
+      <!-- Desktop CTA Action -->
+      <a href="#trai-nghiem" class="nav-cta-btn">
+        <span>Khám phá ứng dụng</span>
+        <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button type="button" class="mobile-menu-trigger" id="mobileMenuToggle" aria-label="Mở danh mục điều hướng" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer & Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Trình đơn di động">
+    <div>
+      <div class="drawer-header">
+        <div class="brand-anchor">
+          <div class="brand-icon-box">
+            <img src="assets/barod-logo.png" alt="Logo Barod" class="brand-icon-img" />
+          </div>
+          <span class="brand-title-text" style="font-size: 20px;">Barod</span>
+        </div>
+        <button type="button" class="drawer-close-btn" id="mobileMenuClose" aria-label="Đóng danh mục">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="drawer-links-list">
+        <a href="#tinh-nang" class="mobile-nav-link">Tính năng</a>
+        <a href="#trai-nghiem" class="mobile-nav-link">Trải nghiệm</a>
+        <a href="#ngan-sach" class="mobile-nav-link">Ngân sách</a>
+        <a href="#bao-cao" class="mobile-nav-link">Báo cáo</a>
+        <a href="#bao-mat" class="mobile-nav-link">Bảo mật</a>
+        <a href="#cach-hoat-dong" class="mobile-nav-link">Quy trình</a>
+      </nav>
+
+      <a href="#trai-nghiem" class="mobile-nav-action">Khám phá ứng dụng</a>
+    </div>
+
+    <div style="font-size: 12px; color: var(--text-secondary); text-align: center;">
+      Barod Vietnam • Bản quyền © 2026
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       HERO SECTION — PRESERVED & REFINED
+       ========================================================================== -->
+  <main class="hero-wrapper" id="dau-trang">
+    <div class="container">
+      <div class="hero-grid-layout">
+
+        <!-- Cột nội dung bên trái -->
+        <div class="hero-left-column">
+          <div class="section-eyebrow">
+            <span>Ứng dụng quản lý tài chính cá nhân</span>
+          </div>
+
+          <h1 class="hero-headline-title">
+            Quản lý tiền bạc,<br />
+            <span class="headline-accent">làm chủ tương lai.</span>
+          </h1>
+
+          <p class="hero-sub-description">
+            Theo dõi thu chi, lập ngân sách và hiểu rõ dòng tiền của bạn trong một trải nghiệm đơn giản, dễ sử dụng.
+          </p>
+
+          <div class="hero-actions-group">
+            <a href="#trai-nghiem" class="btn-cta-main" id="btnHeroExplore">
+              <span>Khám phá Barod</span>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+
+            <a href="#tinh-nang" class="btn-cta-sub" id="btnHeroFeatures">
+              <span>Xem tính năng</span>
+            </a>
+          </div>
+
+          <!-- Các cam kết minh bạch -->
+          <div class="hero-trust-list">
+            <div class="trust-item-node">
+              <svg class="trust-svg-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Dữ liệu lưu trữ cục bộ</span>
+            </div>
+
+            <div class="trust-item-node">
+              <svg class="trust-svg-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Không có quảng cáo</span>
+            </div>
+
+            <div class="trust-item-node">
+              <svg class="trust-svg-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+              </svg>
+              <span>Không liên kết tài khoản bắt buộc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột mockup đa tầng bên phải -->
+        <div class="hero-mockup-stage" aria-label="Giao diện minh họa Barod">
+
+          <!-- Thẻ ngân sách nổi phía sau -->
+          <div class="mockup-budget-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <span style="font-size: 13.5px; font-weight: 700; color: #FFFFFF; display: flex; align-items: center; gap: 6px;">
+                <svg width="15" height="15" viewBox="0 0 20 20" fill="#72E0B5">
+                  <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                  <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9z" clip-rule="evenodd" />
+                </svg>
+                Ngân sách tháng
+              </span>
+              <span style="font-size: 11px; font-weight: 700; color: #72E0B5; background: rgba(114, 224, 181, 0.15); padding: 2px 7px; border-radius: 100px;">
+                Đã chi 74%
+              </span>
+            </div>
+
+            <div style="font-size: 21px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px;">12.500.000 ₫</div>
+            <div style="font-size: 11.5px; color: #94A3B8; margin-bottom: 10px;">Còn lại: <strong style="color: #F5F7FA;">4.350.000 ₫</strong> / 16.850.000 ₫</div>
+
+            <div style="width: 100%; height: 7px; background: #172136; border-radius: 100px; overflow: hidden; margin-bottom: 14px;">
+              <div style="width: 74%; height: 100%; background: linear-gradient(90deg, #72E0B5, #4ADE80); border-radius: 100px;"></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 10px; font-size: 12px;">
+              <div style="display: flex; justify-content: space-between; color: #94A3B8;">
+                <span>• Ăn uống</span>
+                <span style="color: #FFFFFF; font-weight: 600;">4.500.000 ₫</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; color: #94A3B8;">
+                <span>• Hóa đơn</span>
+                <span style="color: #FFFFFF; font-weight: 600;">3.200.000 ₫</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; color: #94A3B8;">
+                <span>• Mua sắm</span>
+                <span style="color: #FFFFFF; font-weight: 600;">2.800.000 ₫</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Khung điện thoại chính -->
+          <div class="mockup-phone-frame">
+            <div class="phone-inner-screen">
+              <div class="phone-dynamic-notch"></div>
+
+              <!-- Header điện thoại -->
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                <div>
+                  <div style="font-size: 10.5px; color: #94A3B8; text-transform: uppercase; font-weight: 600;">Tổng quan tài chính</div>
+                  <div style="font-size: 15px; font-weight: 800; color: #FFFFFF;">Chào bạn, Duy! 👋</div>
+                </div>
+                <div style="width: 32px; height: 32px; background: #101726; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #94A3B8;">
+                  <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Thẻ số dư chính -->
+              <div style="background: linear-gradient(135deg, #132420 0%, #0F1A1E 100%); border: 1px solid rgba(114, 224, 181, 0.25); border-radius: 14px; padding: 14px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: #A3B8B0;">
+                  <span>Số dư hiện tại</span>
+                  <span style="color: #72E0B5; font-weight: 700;">▲ +8,4% tháng này</span>
+                </div>
+                <div style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 4px 0 10px; letter-spacing: -0.5px;">
+                  45.850.000 ₫
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 8px; font-size: 10px;">
+                  <div>
+                    <span style="color: #94A3B8;">Thu nhập tháng</span>
+                    <div style="color: #72E0B5; font-weight: 700; font-size: 12px; margin-top: 2px;">+28.500.000 ₫</div>
+                  </div>
+                  <div>
+                    <span style="color: #94A3B8;">Chi tiêu tháng</span>
+                    <div style="color: #F87171; font-weight: 700; font-size: 12px; margin-top: 2px;">-12.500.000 ₫</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Biểu đồ mini 7 ngày -->
+              <div style="background: #101726; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 10px 12px; margin-bottom: 12px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 6px;">
+                  <span style="font-weight: 700; color: #FFFFFF;">Xu hướng chi tiêu</span>
+                  <span style="color: #64748B;">7 ngày qua</span>
+                </div>
+                <div style="height: 48px; width: 100%;">
+                  <svg viewBox="0 0 300 48" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+                    <path d="M 0,38 Q 60,18 120,28 T 240,12 T 300,22 L 300,48 L 0,48 Z" fill="rgba(114, 224, 181, 0.2)" />
+                    <path d="M 0,38 Q 60,18 120,28 T 240,12 T 300,22" fill="none" stroke="#72E0B5" stroke-width="2" />
+                    <circle cx="240" cy="12" r="3.5" fill="#FFFFFF" stroke="#72E0B5" stroke-width="2" />
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Giao dịch gần đây thu nhỏ -->
+              <div style="display: flex; flex-direction: column; gap: 7px;">
+                <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: #FFFFFF;">
+                  <span>Giao dịch gần đây</span>
+                  <span style="color: #72E0B5; font-size: 10px;">Xem tất cả</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #101726; border-radius: 10px; padding: 8px 10px; font-size: 11.5px;">
+                  <div>
+                    <div style="font-weight: 700; color: #FFFFFF;">Siêu thị WinMart</div>
+                    <div style="font-size: 9.5px; color: #94A3B8;">Ăn uống • Tiền ra</div>
+                  </div>
+                  <span style="font-weight: 700; color: #F87171;">-1.420.000 ₫</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #101726; border-radius: 10px; padding: 8px 10px; font-size: 11.5px;">
+                  <div>
+                    <div style="font-weight: 700; color: #FFFFFF;">Lương tháng 10</div>
+                    <div style="font-size: 9.5px; color: #94A3B8;">Thu nhập • Tiền vào</div>
+                  </div>
+                  <span style="font-weight: 700; color: #72E0B5;">+25.000.000 ₫</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Thẻ mục tiêu nổi góc dưới -->
+          <div class="mockup-goal-card">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+              <div style="width: 32px; height: 32px; background: #E8FAF3; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #102B24;">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <h4 style="font-size: 13px; font-weight: 700; color: #171A17;">Mục tiêu tiết kiệm</h4>
+                <p style="font-size: 11px; color: #6B716B;">Mua MacBook M3</p>
+              </div>
+            </div>
+            <div style="width: 100%; height: 6px; background: #E5E7EB; border-radius: 100px; overflow: hidden; margin-bottom: 6px;">
+              <div style="width: 85%; height: 100%; background: #102B24; border-radius: 100px;"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: #6B716B;">
+              <span>Đã tích lũy: 25.500.000 ₫</span>
+              <span style="color: #102B24; font-weight: 700;">85%</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       SECTION 4: PRODUCT SHOWCASE — INTERACTIVE DASHBOARD TABS
+       ========================================================================== -->
+  <section class="section-wrapper dark-section" id="trai-nghiem">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Trải nghiệm tương tác</div>
+        <h2 class="section-heading">Tiền của bạn. Một góc nhìn rõ ràng hơn.</h2>
+        <p class="section-desc">
+          Mọi thông tin quan trọng về thu chi, ngân sách và mục tiêu tiết kiệm đều được sắp xếp để bạn dễ theo dõi.
+        </p>
+      </div>
+
+      <!-- Tab Buttons Selector -->
+      <div class="showcase-tabs-nav" role="tablist" aria-label="Bộ chọn chế độ xem sản phẩm">
+        <button type="button" class="showcase-tab-btn is-active" data-tab="tab-tong-quan" role="tab" aria-selected="true" id="tabBtn1">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+          </svg>
+          <span>Tổng quan</span>
+        </button>
+
+        <button type="button" class="showcase-tab-btn" data-tab="tab-giao-dich" role="tab" aria-selected="false" id="tabBtn2">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+          </svg>
+          <span>Giao dịch</span>
+        </button>
+
+        <button type="button" class="showcase-tab-btn" data-tab="tab-ngan-sach" role="tab" aria-selected="false" id="tabBtn3">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+            <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9z" clip-rule="evenodd" />
+          </svg>
+          <span>Ngân sách</span>
+        </button>
+
+        <button type="button" class="showcase-tab-btn" data-tab="tab-bao-cao" role="tab" aria-selected="false" id="tabBtn4">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+          </svg>
+          <span>Báo cáo</span>
+        </button>
+
+        <button type="button" class="showcase-tab-btn" data-tab="tab-muc-tieu" role="tab" aria-selected="false" id="tabBtn5">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+          </svg>
+          <span>Mục tiêu tiết kiệm</span>
+        </button>
+      </div>
+
+      <!-- Khung giao diện Dashboard chính -->
+      <div class="showcase-window-container">
+        <!-- Thanh trạng thái Window Chrome -->
+        <div class="showcase-window-chrome">
+          <div class="chrome-window-dots">
+            <span class="chrome-dot red"></span>
+            <span class="chrome-dot yellow"></span>
+            <span class="chrome-dot green"></span>
+          </div>
+          <div class="chrome-tab-indicator">
+            Chế độ xem: <span id="showcaseCurrentTabLabel">Tổng quan</span>
+          </div>
+          <div class="chrome-device-tag">Bản xem trước trực quan</div>
+        </div>
+
+        <div class="showcase-window-body">
+
+          <!-- ================= PANEL 1: TỔNG QUAN ================= -->
+          <div class="showcase-tab-panel is-active" id="tab-tong-quan" role="tabpanel" aria-labelledby="tabBtn1">
+            <div class="overview-metrics-grid">
+              <div class="overview-metric-card">
+                <div class="metric-label-sub">Số dư hiện tại</div>
+                <div class="metric-value-num">45.850.000 ₫</div>
+                <div style="font-size: 11.5px; color: #72E0B5; margin-top: 4px; font-weight: 600;">▲ Tăng 8,4% so với tháng trước</div>
+              </div>
+
+              <div class="overview-metric-card">
+                <div class="metric-label-sub">Thu nhập tháng này</div>
+                <div class="metric-value-num income">+28.500.000 ₫</div>
+                <div style="font-size: 11.5px; color: #94A3B8; margin-top: 4px;">2 nguồn thu đã nhận</div>
+              </div>
+
+              <div class="overview-metric-card">
+                <div class="metric-label-sub">Chi tiêu tháng này</div>
+                <div class="metric-value-num expense">-12.500.000 ₫</div>
+                <div style="font-size: 11.5px; color: #94A3B8; margin-top: 4px;">Chiếm 44% tổng thu</div>
+              </div>
+
+              <div class="overview-metric-card">
+                <div class="metric-label-sub">Ngân sách còn lại</div>
+                <div class="metric-value-num">4.350.000 ₫</div>
+                <div style="font-size: 11.5px; color: #72E0B5; margin-top: 4px;">Đã chi 74% hạn mức</div>
+              </div>
+            </div>
+
+            <div class="overview-dual-grid">
+              <!-- Biểu đồ dòng tiền xu hướng -->
+              <div class="showcase-subcard">
+                <div class="subcard-header-flex">
+                  <span class="subcard-title-text">Xu hướng dòng tiền tháng 10</span>
+                  <span class="subcard-meta-text">Dữ liệu theo tuần</span>
+                </div>
+                <div style="height: 180px; width: 100%;">
+                  <svg viewBox="0 0 500 180" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+                    <defs>
+                      <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#72E0B5" stop-opacity="0.35" />
+                        <stop offset="100%" stop-color="#72E0B5" stop-opacity="0.0" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M 0,140 Q 120,40 250,90 T 500,30 L 500,180 L 0,180 Z" fill="url(#areaGradient)" />
+                    <path d="M 0,140 Q 120,40 250,90 T 500,30" fill="none" stroke="#72E0B5" stroke-width="3" stroke-linecap="round" />
+                    <circle cx="250" cy="90" r="5" fill="#72E0B5" />
+                    <circle cx="500" cy="30" r="6" fill="#FFFFFF" stroke="#72E0B5" stroke-width="3" />
+                  </svg>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 11.5px; color: #64748B; font-weight: 600; padding-top: 8px;">
+                  <span>Tuần 1</span>
+                  <span>Tuần 2</span>
+                  <span>Tuần 3</span>
+                  <span>Tuần 4 (Hiện tại)</span>
+                </div>
+              </div>
+
+              <!-- Giao dịch mới nhất -->
+              <div class="showcase-subcard">
+                <div class="subcard-header-flex">
+                  <span class="subcard-title-text">Giao dịch gần đây</span>
+                  <span class="subcard-meta-text">4 khoản chi mới</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; background: #11182C; border-radius: 8px;">
+                    <div>
+                      <div style="font-size: 13.5px; font-weight: 700; color: #FFFFFF;">Siêu thị WinMart</div>
+                      <div style="font-size: 11px; color: #94A3B8;">Hôm nay • Ăn uống</div>
+                    </div>
+                    <span style="font-size: 13.5px; font-weight: 700; color: #F87171;">-1.420.000 ₫</span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; background: #11182C; border-radius: 8px;">
+                    <div>
+                      <div style="font-size: 13.5px; font-weight: 700; color: #FFFFFF;">Lương tháng 10</div>
+                      <div style="font-size: 11px; color: #94A3B8;">Hôm qua • Thu nhập</div>
+                    </div>
+                    <span style="font-size: 13.5px; font-weight: 700; color: #72E0B5;">+25.000.000 ₫</span>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; background: #11182C; border-radius: 8px;">
+                    <div>
+                      <div style="font-size: 13.5px; font-weight: 700; color: #FFFFFF;">Tiền điện &amp; Nước</div>
+                      <div style="font-size: 11px; color: #94A3B8;">3 ngày trước • Hóa đơn</div>
+                    </div>
+                    <span style="font-size: 13.5px; font-weight: 700; color: #F87171;">-1.150.000 ₫</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 2: GIAO DỊCH (LIVE FILTER & SEARCH) ================= -->
+          <div class="showcase-tab-panel" id="tab-giao-dich" role="tabpanel" aria-labelledby="tabBtn2" hidden>
+            <div class="tx-toolbar-row">
+              <div class="tx-search-box">
+                <svg class="tx-search-icon" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+                <input type="text" class="tx-search-input" id="txSearchInput" placeholder="Tìm giao dịch, danh mục..." aria-label="Tìm kiếm giao dịch mẫu" />
+              </div>
+
+              <div class="tx-filter-chips-group" role="group" aria-label="Lọc theo loại giao dịch">
+                <button type="button" class="tx-filter-chip is-active" data-filter="all" aria-pressed="true">Tất cả</button>
+                <button type="button" class="tx-filter-chip" data-filter="in" aria-pressed="false">Tiền vào</button>
+                <button type="button" class="tx-filter-chip" data-filter="out" aria-pressed="false">Tiền ra</button>
+                <span style="font-size: 12px; color: var(--dash-text-muted); margin-left: 8px;" id="demoTxVisibleCount">6 giao dịch</span>
+              </div>
+            </div>
+
+            <div class="tx-table-container">
+              <!-- Item 1 -->
+              <div class="demo-tx-row" data-type="out" data-title="siêu thị winmart" data-category="ăn uống">
+                <div class="tx-left-block">
+                  <div class="tx-cat-badge" style="background: rgba(251, 191, 36, 0.15); color: #FBBF24;">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.24-1.2A1 1 0 005.06 1H3z" /></svg>
+                  </div>
+                  <div>
+                    <div class="tx-name-title">Siêu thị WinMart</div>
+                    <div class="tx-meta-desc">Ăn uống • 10/10/2026 • Thẻ ghi nợ</div>
+                  </div>
+                </div>
+                <div class="tx-amount-col">
+                  <div class="tx-amount-val outflow">-1.420.000 ₫</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Tiền ra</div>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="demo-tx-row" data-type="in" data-title="lương tháng 10" data-category="thu nhập">
+                <div class="tx-left-block">
+                  <div class="tx-cat-badge" style="background: rgba(114, 224, 181, 0.15); color: #72E0B5;">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                  </div>
+                  <div>
+                    <div class="tx-name-title">Lương tháng 10</div>
+                    <div class="tx-meta-desc">Thu nhập • 05/10/2026 • Chuyển khoản</div>
+                  </div>
+                </div>
+                <div class="tx-amount-col">
+                  <div class="tx-amount-val inflow">+25.000.000 ₫</div>
+                  <div style="font-size: 11px; color: #72E0B5;">Tiền vào</div>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="demo-tx-row" data-type="out" data-title="tiền điện & nước" data-category="hóa đơn">
+                <div class="tx-left-block">
+                  <div class="tx-cat-badge" style="background: rgba(96, 165, 250, 0.15); color: #60A5FA;">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" /></svg>
+                  </div>
+                  <div>
+                    <div class="tx-name-title">Tiền điện &amp; Nước sinh hoạt</div>
+                    <div class="tx-meta-desc">Hóa đơn định kỳ • 03/10/2026</div>
+                  </div>
+                </div>
+                <div class="tx-amount-col">
+                  <div class="tx-amount-val outflow">-1.150.000 ₫</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Tiền ra</div>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="demo-tx-row" data-type="out" data-title="cà phê highlands" data-category="ăn uống">
+                <div class="tx-left-block">
+                  <div class="tx-cat-badge" style="background: rgba(251, 191, 36, 0.15); color: #FBBF24;">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" /><path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" /></svg>
+                  </div>
+                  <div>
+                    <div class="tx-name-title">Cà phê Highlands Coffee</div>
+                    <div class="tx-meta-desc">Ăn uống • 02/10/2026 • Ví điện tử</div>
+                  </div>
+                </div>
+                <div class="tx-amount-col">
+                  <div class="tx-amount-val outflow">-65.000 ₫</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Tiền ra</div>
+                </div>
+              </div>
+
+              <!-- Item 5 -->
+              <div class="demo-tx-row" data-type="in" data-title="thu nhập dự án ngoài" data-category="thu nhập">
+                <div class="tx-left-block">
+                  <div class="tx-cat-badge" style="background: rgba(114, 224, 181, 0.15); color: #72E0B5;">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" /></svg>
+                  </div>
+                  <div>
+                    <div class="tx-name-title">Thù lao tư vấn kỹ thuật</div>
+                    <div class="tx-meta-desc">Thu nhập phụ • 01/10/2026</div>
+                  </div>
+                </div>
+                <div class="tx-amount-col">
+                  <div class="tx-amount-val inflow">+3.500.000 ₫</div>
+                  <div style="font-size: 11px; color: #72E0B5;">Tiền vào</div>
+                </div>
+              </div>
+
+              <!-- Item 6 -->
+              <div class="demo-tx-row" data-type="out" data-title="xăng xe di chuyển" data-category="di chuyển">
+                <div class="tx-left-block">
+                  <div class="tx-cat-badge" style="background: rgba(52, 211, 153, 0.15); color: #34D399;">
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor"><path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /><path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z" /></svg>
+                  </div>
+                  <div>
+                    <div class="tx-name-title">Cây xăng Petrolimex</div>
+                    <div class="tx-meta-desc">Di chuyển • 01/10/2026 • Tiền mặt</div>
+                  </div>
+                </div>
+                <div class="tx-amount-col">
+                  <div class="tx-amount-val outflow">-350.000 ₫</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Tiền ra</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 3: NGÂN SÁCH ================= -->
+          <div class="showcase-tab-panel" id="tab-ngan-sach" role="tabpanel" aria-labelledby="tabBtn3" hidden>
+            <!-- Thẻ tóm tắt ngân sách tổng -->
+            <div class="budget-overview-bar-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="font-size: 16px; font-weight: 800; color: #FFFFFF;">Tổng ngân sách tháng 10</span>
+                <span style="font-size: 12.5px; font-weight: 700; color: #72E0B5; background: rgba(114, 224, 181, 0.15); padding: 4px 10px; border-radius: 100px;">
+                  Đã sử dụng 74%
+                </span>
+              </div>
+              <div style="font-size: 28px; font-weight: 800; color: #FFFFFF; letter-spacing: -0.5px;">12.500.000 ₫ <span style="font-size: 16px; font-weight: 500; color: #94A3B8;">/ 16.850.000 ₫</span></div>
+              <div style="width: 100%; height: 10px; background: #0B1020; border-radius: 100px; overflow: hidden; margin: 14px 0 8px;">
+                <div style="width: 74%; height: 100%; background: linear-gradient(90deg, #72E0B5, #4ADE80); border-radius: 100px;"></div>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 12px; color: #94A3B8;">
+                <span>Còn lại an toàn: <strong style="color: #72E0B5;">4.350.000 ₫</strong></span>
+                <span>Hạn kỳ: Đến hết 31/10</span>
+              </div>
+            </div>
+
+            <!-- Lưới từng hạng mục ngân sách -->
+            <div class="budget-categories-grid">
+              <!-- Item 1: Ăn uống -->
+              <div class="budget-category-box">
+                <div class="cat-header-flex">
+                  <span class="cat-title-text">
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background: #FBBF24;"></span>
+                    Ăn uống &amp; Thực phẩm
+                  </span>
+                  <span class="status-pill normal">75%</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="width: 75%; background: #FBBF24;"></div>
+                </div>
+                <div class="cat-amount-meta">
+                  <span>Đã chi: 4.500.000 ₫</span>
+                  <span>Hạn mức: 6.000.000 ₫</span>
+                </div>
+              </div>
+
+              <!-- Item 2: Mua sắm (Chạm ngưỡng) -->
+              <div class="budget-category-box state-warning">
+                <div class="cat-header-flex">
+                  <span class="cat-title-text">
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background: #D97706;"></span>
+                    Mua sắm &amp; Đồ dùng
+                  </span>
+                  <span class="status-pill warning">⚠️ 87% (Sắp chạm ngưỡng)</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill warning" style="width: 87%;"></div>
+                </div>
+                <div class="cat-amount-meta">
+                  <span style="color: #FCD34D;">Đã chi: 2.800.000 ₫</span>
+                  <span>Hạn mức: 3.200.000 ₫</span>
+                </div>
+              </div>
+
+              <!-- Item 3: Hóa đơn -->
+              <div class="budget-category-box">
+                <div class="cat-header-flex">
+                  <span class="cat-title-text">
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background: #60A5FA;"></span>
+                    Hóa đơn &amp; Tiện ích
+                  </span>
+                  <span class="status-pill normal">80%</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="width: 80%; background: #60A5FA;"></div>
+                </div>
+                <div class="cat-amount-meta">
+                  <span>Đã chi: 3.200.000 ₫</span>
+                  <span>Hạn mức: 4.000.000 ₫</span>
+                </div>
+              </div>
+
+              <!-- Item 4: Di chuyển -->
+              <div class="budget-category-box">
+                <div class="cat-header-flex">
+                  <span class="cat-title-text">
+                    <span style="width: 10px; height: 10px; border-radius: 50%; background: #34D399;"></span>
+                    Di chuyển &amp; Xăng xe
+                  </span>
+                  <span class="status-pill normal">60%</span>
+                </div>
+                <div class="cat-progress-track">
+                  <div class="cat-progress-fill" style="width: 60%; background: #34D399;"></div>
+                </div>
+                <div class="cat-amount-meta">
+                  <span>Đã chi: 1.200.000 ₫</span>
+                  <span>Hạn mức: 2.000.000 ₫</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 4: BÁO CÁO (KÈM BỘ CHỌN KỲ) ================= -->
+          <div class="showcase-tab-panel" id="tab-bao-cao" role="tabpanel" aria-labelledby="tabBtn4" hidden>
+            <div class="report-period-selector-row">
+              <span style="font-size: 15px; font-weight: 700; color: #FFFFFF;">Phân tích dòng tiền &amp; Cơ cấu chi tiêu</span>
+              <div class="period-buttons-group" role="group" aria-label="Chọn kỳ báo cáo">
+                <button type="button" class="report-period-btn is-active" data-period="month" aria-pressed="true">Tháng này</button>
+                <button type="button" class="report-period-btn" data-period="quarter" aria-pressed="false">Quý 3</button>
+                <button type="button" class="report-period-btn" data-period="year" aria-pressed="false">Cả năm</button>
+              </div>
+            </div>
+
+            <div class="report-summary-trio">
+              <div class="report-summary-box">
+                <div style="font-size: 11.5px; color: #94A3B8; font-weight: 600;">Tổng thu nhập ghi nhận</div>
+                <div style="font-size: 22px; font-weight: 800; color: #72E0B5; margin-top: 4px;" id="reportTotalIncome">28.500.000 ₫</div>
+              </div>
+              <div class="report-summary-box">
+                <div style="font-size: 11.5px; color: #94A3B8; font-weight: 600;">Tổng chi tiêu ghi nhận</div>
+                <div style="font-size: 22px; font-weight: 800; color: #F87171; margin-top: 4px;" id="reportTotalExpense">12.500.000 ₫</div>
+              </div>
+              <div class="report-summary-box">
+                <div style="font-size: 11.5px; color: #94A3B8; font-weight: 600;">Dòng tiền thặng dư tích lũy</div>
+                <div style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-top: 4px;" id="reportNetSavings">+16.000.000 ₫</div>
+              </div>
+            </div>
+
+            <!-- Bảng so sánh trực quan và Donut chart -->
+            <div class="overview-dual-grid">
+              <div class="showcase-subcard">
+                <div class="subcard-header-flex">
+                  <span class="subcard-title-text">So sánh Thu nhập và Chi tiêu (3 tháng)</span>
+                  <span class="subcard-meta-text">Đơn vị: Triệu VNĐ</span>
+                </div>
+                <!-- SVG Bar Chart -->
+                <div style="height: 160px; width: 100%;">
+                  <svg viewBox="0 0 400 160" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+                    <!-- Tháng 8 -->
+                    <rect x="50" y="30" width="28" height="110" rx="4" fill="#72E0B5" />
+                    <rect x="85" y="75" width="28" height="65" rx="4" fill="#F87171" opacity="0.85" />
+                    <text x="80" y="155" fill="#94A3B8" font-size="11" text-anchor="middle">Tháng 8</text>
+
+                    <!-- Tháng 9 -->
+                    <rect x="170" y="20" width="28" height="120" rx="4" fill="#72E0B5" />
+                    <rect x="205" y="80" width="28" height="60" rx="4" fill="#F87171" opacity="0.85" />
+                    <text x="200" y="155" fill="#94A3B8" font-size="11" text-anchor="middle">Tháng 9</text>
+
+                    <!-- Tháng 10 -->
+                    <rect x="290" y="25" width="28" height="115" rx="4" fill="#72E0B5" />
+                    <rect x="325" y="90" width="28" height="50" rx="4" fill="#F87171" opacity="0.85" />
+                    <text x="320" y="155" fill="#94A3B8" font-size="11" text-anchor="middle">Tháng 10</text>
+                  </svg>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 24px; font-size: 12px; color: #94A3B8; margin-top: 8px;">
+                  <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background: #72E0B5; border-radius: 2px;"></span> Thu nhập</span>
+                  <span style="display: flex; align-items: center; gap: 6px;"><span style="width: 10px; height: 10px; background: #F87171; border-radius: 2px;"></span> Chi tiêu</span>
+                </div>
+              </div>
+
+              <!-- Cơ cấu chi tiêu Donut -->
+              <div class="showcase-subcard">
+                <div class="subcard-header-flex">
+                  <span class="subcard-title-text">Cơ cấu chi tiêu tháng 10</span>
+                  <span class="subcard-meta-text">Phân bổ tỷ trọng</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px; padding: 10px 0;">
+                  <div style="width: 100px; height: 100px; flex-shrink: 0;">
+                    <svg viewBox="0 0 36 36" style="width: 100%; height: 100%; transform: rotate(-90deg);">
+                      <!-- Nền vòng tròn -->
+                      <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#162038" stroke-width="4"></circle>
+                      <!-- Ăn uống 36% -->
+                      <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#FBBF24" stroke-width="4" stroke-dasharray="36 64" stroke-dashoffset="0"></circle>
+                      <!-- Hóa đơn 26% -->
+                      <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#60A5FA" stroke-width="4" stroke-dasharray="26 74" stroke-dashoffset="-36"></circle>
+                      <!-- Mua sắm 22% -->
+                      <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#EC4899" stroke-width="4" stroke-dasharray="22 78" stroke-dashoffset="-62"></circle>
+                      <!-- Di chuyển 16% -->
+                      <circle cx="18" cy="18" r="15.915" fill="transparent" stroke="#34D399" stroke-width="4" stroke-dasharray="16 84" stroke-dashoffset="-84"></circle>
+                    </svg>
+                  </div>
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11.5px; color: #94A3B8; flex: 1;">
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: #FBBF24;">• Ăn uống</span>
+                      <strong style="color: #FFFFFF;">36%</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: #60A5FA;">• Hóa đơn</span>
+                      <strong style="color: #FFFFFF;">26%</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: #EC4899;">• Mua sắm</span>
+                      <strong style="color: #FFFFFF;">22%</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                      <span style="color: #34D399;">• Di chuyển</span>
+                      <strong style="color: #FFFFFF;">16%</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Khối nhận định súc tích từ dữ liệu mẫu -->
+            <div class="report-insight-quote-box">
+              <svg class="insight-bulb-icon" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+              </svg>
+              <div class="insight-text-quote" id="reportDerivedInsight">
+                Dựa trên số liệu mẫu tháng này: Bạn đã tiết kiệm được 56% trên tổng thu nhập. Chi tiêu cho Ăn uống chiếm tỷ trọng lớn nhất (36%), trong khi dòng tiền thặng dư 16.000.000 ₫ giúp duy trì quỹ dự phòng ổn định.
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PANEL 5: MỤC TIÊU TIẾT KIỆM ================= -->
+          <div class="showcase-tab-panel" id="tab-muc-tieu" role="tabpanel" aria-labelledby="tabBtn5" hidden>
+            <div class="goals-list-grid">
+              <!-- Mục tiêu 1 -->
+              <div class="goal-card-block">
+                <div>
+                  <div class="goal-top-flex">
+                    <div class="goal-icon-badge">
+                      <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                    </div>
+                    <div>
+                      <div class="goal-name-text">Quỹ khẩn cấp 6 tháng</div>
+                      <div class="goal-target-sub">Mục tiêu: 60.000.000 ₫</div>
+                    </div>
+                  </div>
+                  <div class="goal-progress-track-block">
+                    <div class="goal-progress-fill-bar" style="width: 83%;"></div>
+                  </div>
+                </div>
+                <div class="goal-numbers-footer">
+                  <span>Đã có: 50.000.000 ₫ (83%)</span>
+                  <span style="color: #72E0B5;">Thiếu 10.000.000 ₫</span>
+                </div>
+              </div>
+
+              <!-- Mục tiêu 2 -->
+              <div class="goal-card-block">
+                <div>
+                  <div class="goal-top-flex">
+                    <div class="goal-icon-badge">
+                      <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd" /></svg>
+                    </div>
+                    <div>
+                      <div class="goal-name-text">Mua MacBook M3</div>
+                      <div class="goal-target-sub">Mục tiêu: 30.000.000 ₫</div>
+                    </div>
+                  </div>
+                  <div class="goal-progress-track-block">
+                    <div class="goal-progress-fill-bar" style="width: 85%;"></div>
+                  </div>
+                </div>
+                <div class="goal-numbers-footer">
+                  <span>Đã có: 25.500.000 ₫ (85%)</span>
+                  <span style="color: #72E0B5;">Thiếu 4.500.000 ₫</span>
+                </div>
+              </div>
+
+              <!-- Mục tiêu 3 -->
+              <div class="goal-card-block">
+                <div>
+                  <div class="goal-top-flex">
+                    <div class="goal-icon-badge">
+                      <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd" /></svg>
+                    </div>
+                    <div>
+                      <div class="goal-name-text">Du lịch cùng gia đình</div>
+                      <div class="goal-target-sub">Mục tiêu: 15.000.000 ₫</div>
+                    </div>
+                  </div>
+                  <div class="goal-progress-track-block">
+                    <div class="goal-progress-fill-bar" style="width: 60%;"></div>
+                  </div>
+                </div>
+                <div class="goal-numbers-footer">
+                  <span>Đã có: 9.000.000 ₫ (60%)</span>
+                  <span style="color: #72E0B5;">Thiếu 6.000.000 ₫</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Ghi chú minh bạch -->
+      <p class="showcase-disclaimer-note">
+        * Dữ liệu minh họa giao diện trải nghiệm. Barod hoạt động hoàn toàn cục bộ trên thiết bị và không kết nối trực tiếp với tài khoản ngân hàng.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 5: FEATURE EXPLANATION — VARIED EDITORIAL LAYOUTS
+       ========================================================================== -->
+  <section class="section-wrapper" id="tinh-nang">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Công cụ quản lý</div>
+        <h2 class="section-heading">Những công cụ giúp bạn hiểu rõ cách mình tiêu tiền.</h2>
+        <p class="section-desc">
+          Thiết kế tinh gọn, tập trung vào những tính năng thiết thực nhất để kiểm soát dòng tiền cá nhân mỗi ngày.
+        </p>
+      </div>
+
+      <div class="features-editorial-container">
+
+        <!-- Khả năng 1: Theo dõi thu chi (Split layout) -->
+        <article class="feature-split-layout">
+          <div class="feature-text-panel">
+            <div class="feature-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <h3 class="feature-title-h3">Theo dõi thu chi nhanh chóng</h3>
+            <p class="feature-desc-p">
+              Ghi chép giao dịch ngay khi phát sinh với giao diện nhập liệu tối giản. Tự động gắn nhãn danh mục, ghi chú nguồn tiền (tiền mặt, thẻ, ví điện tử) để dòng tiền luôn được cập nhật chính xác.
+            </p>
+            <div class="feature-bullet-points">
+              <div class="bullet-item">
+                <svg class="bullet-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Thêm giao dịch trong chưa đầy 5 giây</span>
+              </div>
+              <div class="bullet-item">
+                <svg class="bullet-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Hỗ trợ nhiều ví tiền và đơn vị ngoại tệ</span>
+              </div>
+              <div class="bullet-item">
+                <svg class="bullet-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Tìm kiếm và lọc lịch sử chi tiêu dễ dàng</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-visual-panel">
+            <div class="ui-snippet-card">
+              <div style="font-size: 13px; font-weight: 700; color: #FFFFFF; margin-bottom: 14px;">Bản ghi thu chi thực tế</div>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #11182C; padding: 12px 14px; border-radius: 10px;">
+                  <div>
+                    <div style="color: #FFFFFF; font-weight: 700; font-size: 14px;">Lương &amp; Thưởng dự án</div>
+                    <div style="color: #94A3B8; font-size: 11px;">Thu nhập • Chuyển khoản</div>
+                  </div>
+                  <span style="color: #72E0B5; font-weight: 800; font-size: 14.5px;">+28.500.000 ₫</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #11182C; padding: 12px 14px; border-radius: 10px;">
+                  <div>
+                    <div style="color: #FFFFFF; font-weight: 700; font-size: 14px;">Siêu thị &amp; Thực phẩm</div>
+                    <div style="color: #94A3B8; font-size: 11px;">Ăn uống • Thẻ visa</div>
+                  </div>
+                  <span style="color: #F87171; font-weight: 800; font-size: 14.5px;">-1.420.000 ₫</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; background: #11182C; padding: 12px 14px; border-radius: 10px;">
+                  <div>
+                    <div style="color: #FFFFFF; font-weight: 700; font-size: 14px;">Cước Internet &amp; Điện thoại</div>
+                    <div style="color: #94A3B8; font-size: 11px;">Hóa đơn cố định</div>
+                  </div>
+                  <span style="color: #F87171; font-weight: 800; font-size: 14.5px;">-350.000 ₫</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Khả năng 2: Lập ngân sách (Split layout reversed) -->
+        <article class="feature-split-layout is-reversed">
+          <div class="feature-visual-panel">
+            <div class="ui-snippet-card">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+                <span style="font-size: 13.5px; font-weight: 700; color: #FFFFFF;">Hạn mức danh mục tháng</span>
+                <span style="font-size: 11.5px; color: #D97706; font-weight: 700;">Cảnh báo 85%</span>
+              </div>
+              <div style="background: #11182C; padding: 14px; border-radius: 10px; margin-bottom: 10px; border: 1px solid rgba(217, 119, 6, 0.3);">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: #FFFFFF; font-weight: 700;">Mua sắm cá nhân</span>
+                  <span style="color: #FCD34D; font-weight: 700;">2.800.000 ₫ / 3.200.000 ₫</span>
+                </div>
+                <div style="width: 100%; height: 7px; background: #0B1020; border-radius: 100px; margin: 10px 0 6px;">
+                  <div style="width: 87%; height: 100%; background: #D97706; border-radius: 100px;"></div>
+                </div>
+                <div style="font-size: 11px; color: #94A3B8;">Còn lại 400.000 ₫ cho 21 ngày tới</div>
+              </div>
+              <div style="background: #11182C; padding: 14px; border-radius: 10px;">
+                <div style="display: flex; justify-content: space-between; font-size: 13px;">
+                  <span style="color: #FFFFFF; font-weight: 700;">Ăn uống ngoài</span>
+                  <span style="color: #72E0B5; font-weight: 700;">4.500.000 ₫ / 6.000.000 ₫</span>
+                </div>
+                <div style="width: 100%; height: 7px; background: #0B1020; border-radius: 100px; margin: 10px 0 6px;">
+                  <div style="width: 75%; height: 100%; background: #72E0B5; border-radius: 100px;"></div>
+                </div>
+                <div style="font-size: 11px; color: #94A3B8;">Còn lại 1.500.000 ₫ (Tiến độ an toàn)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-text-panel">
+            <div class="feature-badge-icon">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+              </svg>
+            </div>
+            <h3 class="feature-title-h3">Lập ngân sách theo từng danh mục</h3>
+            <p class="feature-desc-p">
+              Thay vì chờ đến cuối tháng mới giật mình, Barod cho phép bạn ấn định hạn mức chi tiêu cho từng nhóm nhu cầu. Trực quan hóa số tiền đã dùng và cảnh báo tinh tế khi bạn sắp chạm ngưỡng chi tiêu dự kiến.
+            </p>
+            <div class="feature-bullet-points">
+              <div class="bullet-item">
+                <svg class="bullet-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Hạn mức linh hoạt theo tháng hoặc chu kỳ nhận lương</span>
+              </div>
+              <div class="bullet-item">
+                <svg class="bullet-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                <span>Nhận biết khoản còn lại an toàn để chi tiêu</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Khả năng 3 & 4 (Fullwidth 2-column Grid) -->
+        <div class="feature-fullwidth-grid">
+          <!-- Khả năng 3: Phân tích dòng tiền -->
+          <article class="feature-card-contained">
+            <div>
+              <div class="feature-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <h3 class="feature-title-h3">Phân tích dòng tiền thực tế</h3>
+              <p class="feature-desc-p">
+                Biểu đồ thống kê tự động vẽ nên bức tranh tài chính trung thực. Biết rõ dòng tiền thặng dư bao nhiêu mỗi chu kỳ và phát hiện kịp thời các khoản chi tiêu định kỳ có xu hướng tăng cao.
+              </p>
+            </div>
+            <div style="background: var(--surface-subtle); border-radius: var(--radius-sm); padding: 18px; border: 1px solid var(--border-subtle); margin-top: 16px;">
+              <div style="font-size: 12px; font-weight: 700; color: var(--text-secondary); margin-bottom: 6px;">Nhận định mẫu rút ra:</div>
+              <div style="font-size: 13.5px; color: var(--text-main); font-weight: 600; line-height: 1.5;">
+                "Tháng này bạn đã kiểm soát chi tiêu tốt hơn 14% so với tháng trước nhờ giảm bớt các khoản mua sắm ngẫu hứng."
+              </div>
+            </div>
+          </article>
+
+          <!-- Khả năng 4: Mục tiêu tiết kiệm -->
+          <article class="feature-card-contained">
+            <div>
+              <div class="feature-badge-icon">
+                <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <h3 class="feature-title-h3">Hiện thực hóa mục tiêu tiết kiệm</h3>
+              <p class="feature-desc-p">
+                Gắn từng khoản tiền thặng dư vào những mục tiêu có ý nghĩa: Quỹ khẩn cấp, chuyến du lịch gia đình hay nâng cấp công cụ làm việc. Thanh tiến độ trực quan giúp bạn duy trì kỷ luật tích lũy.
+              </p>
+            </div>
+            <div style="background: var(--surface-subtle); border-radius: var(--radius-sm); padding: 18px; border: 1px solid var(--border-subtle); margin-top: 16px;">
+              <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700;">
+                <span>Mục tiêu: Mua MacBook M3</span>
+                <span style="color: var(--brand-dark);">85% (25.500.000 ₫)</span>
+              </div>
+              <div style="width: 100%; height: 6px; background: #D1D5DB; border-radius: 100px; margin: 8px 0 4px;">
+                <div style="width: 85%; height: 100%; background: var(--brand-dark); border-radius: 100px;"></div>
+              </div>
+              <div style="font-size: 11.5px; color: var(--text-secondary);">Dự kiến hoàn thành trong tháng tới</div>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 6: DEDICATED BUDGET SECTION
+       ========================================================================== -->
+  <section class="section-wrapper subtle-section" id="ngan-sach">
+    <div class="container">
+      <div class="budget-editorial-grid">
+        <div>
+          <div class="section-eyebrow">Chuyên mục ngân sách</div>
+          <h2 class="section-heading">Biết mình còn bao nhiêu trước khi tiêu thêm.</h2>
+          <p class="section-desc">
+            Lập kế hoạch chi tiêu giúp bạn thoải mái tận hưởng cuộc sống mà không phải lo âu về những hóa đơn bất ngờ vào cuối tháng.
+          </p>
+
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 14px;">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="width: 24px; height: 24px; background: #E8FAF3; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--brand-dark); font-weight: 800; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</div>
+              <p style="font-size: 15px; color: var(--text-main); line-height: 1.5;">
+                <strong>Phân bổ ngân sách theo tỷ lệ hợp lý</strong>: Dễ dàng chia ngân sách cho nhu cầu thiết yếu (Ăn uống, Hóa đơn) và chi tiêu linh hoạt (Mua sắm, Giải trí).
+              </p>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <div style="width: 24px; height: 24px; background: #E8FAF3; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--brand-dark); font-weight: 800; font-size: 12px; flex-shrink: 0; margin-top: 2px;">✓</div>
+              <p style="font-size: 15px; color: var(--text-main); line-height: 1.5;">
+                <strong>Trạng thái trực quan, không báo động giả</strong>: Màu sắc phân hóa văn minh — xanh mint khi an toàn, vàng cam nhã nhặn khi chạm mốc 80% để bạn chủ động điều chỉnh.
+              </p>
+            </div>
+          </div>
+
+          <div class="budget-metric-callout">
+            <div class="callout-box">
+              <h4>Ngân sách tháng mẫu</h4>
+              <p>16.850.000 ₫</p>
+            </div>
+            <div class="callout-box">
+              <h4>Đã chi tiêu thực tế</h4>
+              <p style="color: #102B24;">12.500.000 ₫</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual thẻ ngân sách chi tiết -->
+        <div style="background: var(--surface-white); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-card);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <h3 style="font-size: 18px; font-weight: 800; color: var(--text-main);">Tiến độ ngân sách tháng 10</h3>
+              <p style="font-size: 13px; color: var(--text-secondary);">Cập nhật theo giao dịch thực tế</p>
+            </div>
+            <span style="font-size: 13px; font-weight: 700; color: var(--brand-dark); background: var(--brand-mint-light); padding: 4px 10px; border-radius: 100px;">
+              74% hạn mức
+            </span>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <!-- Row 1 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: var(--text-main);">Ăn uống &amp; Nhu yếu phẩm</span>
+                <span style="font-weight: 700; color: var(--text-secondary);">4.500.000 ₫ / 6.000.000 ₫</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #E5E7EB; border-radius: 100px; overflow: hidden;">
+                <div style="width: 75%; height: 100%; background: #102B24; border-radius: 100px;"></div>
+              </div>
+            </div>
+
+            <!-- Row 2 (Warning) -->
+            <div style="background: rgba(217, 119, 6, 0.06); padding: 12px; border-radius: 10px; border: 1px solid rgba(217, 119, 6, 0.2);">
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: #92400E;">Mua sắm &amp; Tiện ích cá nhân</span>
+                <span style="font-weight: 700; color: #B45309;">2.800.000 ₫ / 3.200.000 ₫ (87%)</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #E5E7EB; border-radius: 100px; overflow: hidden;">
+                <div style="width: 87%; height: 100%; background: #D97706; border-radius: 100px;"></div>
+              </div>
+              <div style="font-size: 11.5px; color: #92400E; margin-top: 6px;">
+                ℹ️ Bạn đã sử dụng gần hết hạn mức mua sắm. Cân nhắc dời các khoản không gấp sang tháng sau.
+              </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: var(--text-main);">Hóa đơn điện, nước &amp; Internet</span>
+                <span style="font-weight: 700; color: var(--text-secondary);">3.200.000 ₫ / 4.000.000 ₫</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #E5E7EB; border-radius: 100px; overflow: hidden;">
+                <div style="width: 80%; height: 100%; background: #102B24; border-radius: 100px;"></div>
+              </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 6px;">
+                <span style="font-weight: 700; color: var(--text-main);">Di chuyển &amp; Bảo dưỡng</span>
+                <span style="font-weight: 700; color: var(--text-secondary);">1.200.000 ₫ / 2.000.000 ₫</span>
+              </div>
+              <div style="width: 100%; height: 8px; background: #E5E7EB; border-radius: 100px; overflow: hidden;">
+                <div style="width: 60%; height: 100%; background: #102B24; border-radius: 100px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 7: REPORTS AND INSIGHTS
+       ========================================================================== -->
+  <section class="section-wrapper" id="bao-cao">
+    <div class="container">
+      <div class="reports-layout-grid">
+
+        <!-- Card Báo cáo chi tiết -->
+        <div class="report-card-showcase">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div>
+              <h3 style="font-size: 20px; font-weight: 800; color: var(--text-main);">Báo cáo thu chi tổng hợp</h3>
+              <p style="font-size: 13px; color: var(--text-secondary);">Số liệu chu kỳ Quý 3/2026</p>
+            </div>
+            <span style="font-size: 12px; font-weight: 700; color: #102B24; background: #E8FAF3; padding: 4px 12px; border-radius: 100px;">
+              Tỷ lệ tiết kiệm: 55%
+            </span>
+          </div>
+
+          <!-- Bảng so sánh chỉ số -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px;">
+            <div style="background: var(--surface-subtle); padding: 14px; border-radius: 10px; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">Tổng thu Quý 3</div>
+              <div style="font-size: 18px; font-weight: 800; color: var(--brand-dark); margin-top: 2px;">85.500.000 ₫</div>
+            </div>
+            <div style="background: var(--surface-subtle); padding: 14px; border-radius: 10px; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">Tổng chi Quý 3</div>
+              <div style="font-size: 18px; font-weight: 800; color: #DC2626; margin-top: 2px;">38.200.000 ₫</div>
+            </div>
+            <div style="background: var(--surface-subtle); padding: 14px; border-radius: 10px; border: 1px solid var(--border-subtle);">
+              <div style="font-size: 11px; color: var(--text-secondary); font-weight: 600;">Thặng dư ròng</div>
+              <div style="font-size: 18px; font-weight: 800; color: #059669; margin-top: 2px;">+47.300.000 ₫</div>
+            </div>
+          </div>
+
+          <!-- Nhận định súc tích từ dữ liệu mẫu -->
+          <div style="background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 12px; padding: 18px 20px;">
+            <div style="font-size: 12.5px; font-weight: 700; color: #166534; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+              <span>💡 Phân tích từ số liệu mẫu:</span>
+            </div>
+            <p style="font-size: 13.5px; color: #14532D; line-height: 1.55;">
+              Thu nhập trung bình đạt 28.500.000 ₫/tháng với cơ cấu chi tiêu ổn định. Thặng dư tích lũy 47.300.000 ₫ trong quý đã giúp bạn đáp ứng 85% kế hoạch mua sắm thiết bị phục vụ công việc.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-eyebrow">Báo cáo &amp; Phân tích</div>
+          <h2 class="section-heading">Nhìn lại cách bạn sử dụng tiền.</h2>
+          <p class="section-desc">
+            Không cần kế toán viên hay các bảng tính Excel phức tạp. Barod tự động tổng hợp những số liệu then chốt nhất để bạn thấy rõ bức tranh tài chính toàn cảnh.
+          </p>
+
+          <div style="margin-top: 28px; display: flex; flex-direction: column; gap: 16px;">
+            <div style="display: flex; gap: 14px;">
+              <div style="font-size: 20px;">📊</div>
+              <div>
+                <h4 style="font-size: 16px; font-weight: 700; color: var(--text-main); margin-bottom: 2px;">Minh bạch cơ cấu chi tiêu</h4>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">Biết chính xác bao nhiêu phần trăm thu nhập được dùng cho ăn uống, mua sắm và các hóa đơn định kỳ.</p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px;">
+              <div style="font-size: 20px;">📈</div>
+              <div>
+                <h4 style="font-size: 16px; font-weight: 700; color: var(--text-main); margin-bottom: 2px;">Theo dõi đà tăng trưởng tích lũy</h4>
+                <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.5;">Quan sát dòng tiền thặng dư hàng tháng chuyển hóa thành tài sản dự phòng vững chắc theo thời gian.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: PRIVACY AND DATA CONTROL (DARK & RESTRAINED)
+       ========================================================================== -->
+  <section class="section-wrapper dark-section" id="bao-mat">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Quyền riêng tư &amp; Dữ liệu</div>
+        <h2 class="section-heading">Thông tin tài chính là của bạn.</h2>
+        <p class="section-desc">
+          Barod được xây dựng với nguyên tắc tôn trọng quyền riêng tư tối đa: Không theo dõi, không quảng cáo và dữ liệu lưu trực tiếp trên thiết bị của bạn.
+        </p>
+      </div>
+
+      <div class="privacy-cards-grid">
+        <!-- Trụ cột 1 -->
+        <div class="privacy-card-node">
+          <div class="privacy-icon-box">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3 1h10v8H5V6z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="privacy-card-title">Lưu trữ cục bộ (Local-first)</h3>
+          <p class="privacy-card-desc">
+            Toàn bộ cơ sở dữ liệu SQLite được lưu trữ trực tiếp trong bộ nhớ thiết bị của bạn. Ứng dụng hoạt động mượt mà kể cả khi không có kết nối Internet.
+          </p>
+        </div>
+
+        <!-- Trụ cột 2 -->
+        <div class="privacy-card-node">
+          <div class="privacy-icon-box">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="privacy-card-title">Không qua máy chủ trung gian</h3>
+          <p class="privacy-card-desc">
+            Chúng tôi không vận hành máy chủ lưu trữ dữ liệu tài chính của người dùng. Barod không thu thập lịch sử số dư hay thói quen tiêu dùng của bạn.
+          </p>
+        </div>
+
+        <!-- Trụ cột 3 -->
+        <div class="privacy-card-node">
+          <div class="privacy-icon-box">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="privacy-card-title">Toàn quyền sao lưu &amp; Xuất dữ liệu</h3>
+          <p class="privacy-card-desc">
+            Bạn có thể xuất toàn bộ dữ liệu ra tệp CSV hoặc tạo bản sao lưu mã hóa vào Google Drive cá nhân bất cứ lúc nào mà không bị ràng buộc hệ sinh thái.
+          </p>
+        </div>
+
+        <!-- Trụ cột 4 -->
+        <div class="privacy-card-node">
+          <div class="privacy-icon-box">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 000 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="privacy-card-title">Không quảng cáo &amp; Mã theo dõi</h3>
+          <p class="privacy-card-desc">
+            Giao diện hoàn toàn sạch sẽ, không tích hợp SDK quảng cáo của bên thứ ba, không spam thông báo phiền toái và không bán dữ liệu cho bất kỳ đối tác nào.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 9: HOW IT WORKS (SEQUENTIAL TIMELINE)
+       ========================================================================== -->
+  <section class="section-wrapper" id="cach-hoat-dong">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">Quy trình đơn giản</div>
+        <h2 class="section-heading">Bắt đầu quản lý tiền theo cách của bạn.</h2>
+        <p class="section-desc">
+          Bốn bước liền mạch giúp bạn thiết lập thói quen tài chính kỷ luật mà không tốn quá nhiều thời gian mỗi ngày.
+        </p>
+      </div>
+
+      <div class="timeline-steps-container">
+        <!-- Bước 1 -->
+        <div class="timeline-step-card">
+          <div class="step-number-badge">1</div>
+          <h3 class="step-card-title">Ghi lại thu và chi</h3>
+          <p class="step-card-desc">
+            Nhập nhanh các khoản tiền vào và tiền ra hàng ngày, chọn danh mục tương ứng và phương thức thanh toán.
+          </p>
+        </div>
+
+        <!-- Bước 2 -->
+        <div class="timeline-step-card">
+          <div class="step-number-badge">2</div>
+          <h3 class="step-card-title">Theo dõi ngân sách</h3>
+          <p class="step-card-desc">
+            Thiết lập giới hạn chi tiêu cho các nhóm nhu yếu phẩm, theo dõi thanh tiến độ để không vượt mức định kỳ.
+          </p>
+        </div>
+
+        <!-- Bước 3 -->
+        <div class="timeline-step-card">
+          <div class="step-number-badge">3</div>
+          <h3 class="step-card-title">Xem báo cáo thói quen</h3>
+          <p class="step-card-desc">
+            Mở bảng thống kê tuần hoặc tháng để thấy rõ tiền của mình đang đi về đâu và cơ cấu chi tiêu đã cân đối chưa.
+          </p>
+        </div>
+
+        <!-- Bước 4 -->
+        <div class="timeline-step-card">
+          <div class="step-number-badge">4</div>
+          <h3 class="step-card-title">Tích lũy theo mục tiêu</h3>
+          <p class="step-card-desc">
+            Phân bổ số tiền thặng dư vào các mục tiêu tiết kiệm dài hạn và theo dõi ngày bạn hoàn thành kế hoạch.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 10: FINAL CALL TO ACTION
+       ========================================================================== -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="container">
+      <div class="final-cta-container">
+        <h2 class="final-cta-title">Bắt đầu từ việc hiểu rõ dòng tiền của bạn.</h2>
+        <p class="final-cta-desc">
+          Khám phá cách Barod giúp bạn theo dõi thu chi và quản lý ngân sách rõ ràng hơn mỗi ngày.
+        </p>
+
+        <div class="final-cta-actions">
+          <a href="#trai-nghiem" class="btn-cta-light">
+            <span>Trải nghiệm ngay bản demo</span>
+          </a>
+          <a href="#tinh-nang" class="btn-cta-outline-white">
+            <span>Tìm hiểu chi tiết tính năng</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 11: FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" id="thong-tin-du-an">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <div class="brand-anchor">
+            <div class="brand-icon-box">
+              <img src="assets/barod-logo.png" alt="Logo Barod" class="brand-icon-img" />
+            </div>
+            <span class="brand-title-text" style="font-size: 20px;">Barod</span>
+          </div>
+          <p>
+            Ứng dụng quản lý tài chính cá nhân, theo dõi thu chi và lập ngân sách thông minh. Thiết kế cho sự minh bạch, kỷ luật và quyền riêng tư tối thượng.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Sản phẩm</h4>
+          <div class="footer-links-list">
+            <a href="#tinh-nang" class="footer-link-item">Tính năng</a>
+            <a href="#trai-nghiem" class="footer-link-item">Trải nghiệm tương tác</a>
+            <a href="#ngan-sach" class="footer-link-item">Quản lý ngân sách</a>
+            <a href="#bao-cao" class="footer-link-item">Báo cáo &amp; Xu hướng</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Tin cậy &amp; Bảo mật</h4>
+          <div class="footer-links-list">
+            <a href="#bao-mat" class="footer-link-item">Quyền riêng tư dữ liệu</a>
+            <a href="#bao-mat" class="footer-link-item">Kiến trúc Local-first</a>
+            <a href="#cach-hoat-dong" class="footer-link-item">Quy trình sử dụng</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Dự án</h4>
+          <div class="footer-links-list">
+            <span class="footer-link-item" style="color: var(--text-main); font-weight: 600;">Phiên bản: 1.0.0 (Vietnamese)</span>
+            <span class="footer-link-item">Giấy phép mã nguồn: GPL-3.0</span>
+            <span class="footer-link-item">Tác giả: Bảo Trần Duy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          Bản quyền © 2026 Barod Vietnam. Phát triển trên nền tảng mã nguồn mở.
+        </div>
+        <div>
+          Thiết kế chuẩn Fintech • Tiếng Việt 100%
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT CONTROLLER -->
+  <script src="app.js"></script>
+</body>
+</html>

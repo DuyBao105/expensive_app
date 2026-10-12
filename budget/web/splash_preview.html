@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barod - Trình Xem & Chọn Animation Splash Screen</title>
+  <script src="lottie-player.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #080D1A;
+      color: #E6EDF3;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px 60px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      background: linear-gradient(135deg, #FFF, #37E58C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: #8B9BB4;
+      font-size: 14px;
+    }
+    .preview-card {
+      width: 100%;
+      max-width: 480px;
+      height: 480px;
+      border-radius: 24px;
+      background: radial-gradient(circle at 50% 40%, #16243D 0%, #0D1527 60%, #070B14 100%);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .glow {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(55, 229, 140, 0.25) 0%, rgba(55, 229, 140, 0.03) 60%, transparent 70%);
+      filter: blur(25px);
+      pointer-events: none;
+      animation: pulse 2.6s ease-in-out infinite alternate;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.5; }
+      100% { transform: scale(1.15); opacity: 1; }
+    }
+    .brand-title {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 5px;
+      background: linear-gradient(135deg, #FFF 30%, #37E58C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: #8FA0B5;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .progress-track {
+      width: 180px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 99px;
+      position: relative;
+      overflow: hidden;
+    }
+    .progress-thumb {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 40%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #1FA866, #37E58C, #6AFFB5);
+      animation: slide 1.6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+    }
+    @keyframes slide {
+      0% { left: -40%; width: 30%; }
+      50% { width: 50%; }
+      100% { left: 100%; width: 30%; }
+    }
+    .status-text {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 12px;
+    }
+    .selector-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      width: 100%;
+      max-width: 480px;
+    }
+    .option-btn {
+      background: #111B2E;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+      color: #CBD5E1;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .option-btn:hover {
+      background: #17243D;
+      border-color: rgba(55, 229, 140, 0.4);
+      transform: translateY(-2px);
+    }
+    .option-btn.active {
+      background: rgba(55, 229, 140, 0.12);
+      border-color: #37E58C;
+      color: #37E58C;
+      box-shadow: 0 0 20px rgba(55, 229, 140, 0.2);
+    }
+    .option-title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .option-desc {
+      font-size: 12px;
+      color: #7B8CA3;
+    }
+    .option-btn.active .option-desc {
+      color: #A3E9C4;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BAROD SPLASH SCREEN</h1>
+    <p class="subtitle">Bấm vào các animation bên dưới để xem trực quan hiệu ứng hiển thị</p>
+  </header>
+
+  <div class="preview-card">
+    <div class="glow"></div>
+    <div style="position: relative; z-index: 2; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center;">
+      <lottie-player
+        id="player"
+        src="wallet_coins.json"
+        background="transparent"
+        speed="1"
+        style="width: 200px; height: 200px;"
+        loop
+        autoplay>
+      </lottie-player>
+    </div>
+    <div class="brand-title">BAROD</div>
+    <div class="brand-sub">Quản Lý Tài Chính Thông Minh</div>
+    <div class="progress-track">
+      <div class="progress-thumb"></div>
+    </div>
+    <div class="status-text">Đang tải ứng dụng...</div>
+  </div>
+
+  <div class="selector-grid">
+    <button class="option-btn active" onclick="switchAnim('wallet_coins.json', this)">
+      <span class="option-title">1. Ví nạp xu vàng (Khuyên dùng)</span>
+      <span class="option-desc">Ví mở ra, xu vàng rơi vào nảy tưng bừng sinh động</span>
+    </button>
+    <button class="option-btn" onclick="switchAnim('wallet_smooth.json', this)">
+      <span class="option-title">2. Ví công nghệ mở thẻ</span>
+      <span class="option-desc">Ví da thanh lịch, mở thẻ tín dụng mượt mà 60 FPS</span>
+    </button>
+    <button class="option-btn" onclick="switchAnim('wallet_flying.json', this)">
+      <span class="option-title">3. Tiền bay vào ví</span>
+      <span class="option-desc">Phong cách phẳng tối giản, tiền xu và tiền giấy bay lượn</span>
+    </button>
+    <button class="option-btn" onclick="switchAnim('wallet_fintech.json', this)">
+      <span class="option-title">4. Biểu tượng Fintech</span>
+      <span class="option-desc">Biểu tượng ví xoay vòng quỹ đạo công nghệ tài chính</span>
+    </button>
+  </div>
+
+  <script>
+    function switchAnim(file, btn) {
+      document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const player = document.getElementById('player');
+      player.load(file);
+    }
+  </script>
+</body>
+</html>

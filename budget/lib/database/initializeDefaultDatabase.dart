@@ -1,0 +1,57 @@
+import 'package:budget/struct/settings.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:budget/database/tables.dart';
+import 'package:budget/struct/databaseGlobal.dart';
+import 'package:budget/struct/defaultCategories.dart';
+
+Future<bool> initializeDefaultDatabase() async {
+  // Auto-migrate existing wallets from USD to VND
+  try {
+    await database.customStatement("UPDATE wallets SET currency = 'vnd', decimals = 0 WHERE currency = 'usd' OR currency IS NULL");
+  } catch (e) {
+    print("Error auto-migrating wallets to vnd: $e");
+  }
+
+  //Initialize default categories, but not after a backup load
+  if (isDatabaseImportedOnThisSession != true &&
+      (await database.getAllCategories()).length <= 0) {
+    await createDefaultCategories();
+  }
+
+  if ((await database.getAllWallets()).length <= 0) {
+    await database.createOrUpdateWallet(
+      defaultWallet(),
+      customDateTimeModified: DateTime(0),
+    );
+  }
+
+  return true;
+}
+
+Future<bool> createDefaultCategories() async {
+  print("Creating default categories");
+  for (TransactionCategory category in defaultCategories()) {
+    try {
+      await database.getCategory(category.categoryPk).$2;
+    } catch (e) {
+      print(
+          e.toString() + " default category does not already exist, creating");
+      await database.createOrUpdateCategory(category,
+          customDateTimeModified: DateTime(0));
+    }
+  }
+  return true;
+}
+
+TransactionWallet defaultWallet() {
+  return TransactionWallet(
+    walletPk: "0",
+    name: "default-account-name".tr(),
+    dateCreated: DateTime.now(),
+    order: 0,
+    currency: "vnd",
+    dateTimeModified: null,
+    decimals: 0,
+    homePageWidgetDisplay: defaultWalletHomePageWidgetDisplay,
+  );
+}

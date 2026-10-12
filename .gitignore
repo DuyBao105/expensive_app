@@ -1,0 +1,14 @@
+# Miscellaneous
+/.vscode/
+/scratch/
+*.apk
+*.aab
+Thumbs.db
+.DS_Store
+
+# Firebase & Secrets
+**/firebase_options.dart
+!**/firebase_options.example.dart
+**/google-services*.json
+**/GoogleService-Info.plist
+

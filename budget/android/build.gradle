@@ -1,0 +1,74 @@
+buildscript {
+    ext.kotlin_version = '2.1.0'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.3.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.4.1'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    tasks.matching { it.name.contains("AarMetadata") }.configureEach {
+        enabled = false
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects { subproject ->
+    subproject.buildDir = "${rootProject.buildDir}/${subproject.name}"
+    subproject.evaluationDependsOn(':app')
+
+    if (subproject.name != 'app') {
+        def configureSubproject = {
+            if (subproject.hasProperty("android")) {
+                subproject.android {
+                    if (namespace == null) {
+                        def manifestFile = subproject.file("src/main/AndroidManifest.xml")
+                        if (manifestFile.exists()) {
+                            def match = (manifestFile.text =~ /package\s*=\s*"([^"]+)"/)
+                            if (match.find()) {
+                                namespace match.group(1)
+                            }
+                        }
+                        if (namespace == null) {
+                            namespace subproject.group
+                        }
+                    }
+                    compileOptions {
+                        sourceCompatibility JavaVersion.VERSION_17
+                        targetCompatibility JavaVersion.VERSION_17
+                    }
+                }
+            }
+            subproject.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+                kotlinOptions {
+                    jvmTarget = "17"
+                }
+            }
+        }
+
+        subproject.plugins.withId("com.android.library") {
+            configureSubproject()
+        }
+        if (!subproject.state.executed) {
+            subproject.afterEvaluate {
+                configureSubproject()
+            }
+        } else {
+            configureSubproject()
+        }
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
